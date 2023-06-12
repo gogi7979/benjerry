@@ -1,0 +1,327 @@
+/* Web Fonts */
+@font-face { font-family: 'GongGothicMedium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'Pretendard-Regular'; src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff'); font-weight: 400; font-style: normal; }
+
+/* Reset CSS */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+a { text-decoration: none; color: inherit; }
+li { list-style: none; }
+body { font-family: 'Pretendard-Regular'; font-size: 14px; color: #2A2323; }
+/*html { scroll-behavior: smooth; }*/
+
+/* Header */
+header {
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    width: 100%; height: 100px;
+    padding: 25px 50px;
+}
+
+.header__logo {
+    display: inline-block;
+    width: 130px;
+}
+
+.header__logo img {
+    width: inherit;
+}
+
+.header__nav {
+    display: flex;
+    column-gap: 35px;
+}
+
+.header__nav a {
+    position: relative;
+    font-size: 1.5em;
+}
+
+.header__nav a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -5px;  
+    width: 0; height: 2px;
+    background-color: #2A2323;
+    transition: 0.3s;
+}
+
+.header__nav a:hover::after {
+    width: 100%;
+}
+
+.header__btn-close,
+.header__btn-open {
+    display: none;
+    border: none;
+    background-color: transparent;
+    font-size: 1.4em;
+    font-family: 'GongGothicMedium';
+    cursor: pointer;
+}
+
+/* Section */
+section {
+    position: relative;
+    height: 100vh; 
+}
+
+.wrap {
+    position: absolute;
+    left: 10%; top: 17%; z-index: 1;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 40px;
+    width: 800px;
+    padding-bottom: 50px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+    font-family: 'GongGothicMedium';
+}
+
+.title h1 {
+    font-size: 7.5em;
+}
+
+.title p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+/* Main Section */
+.section_main video {
+    position: absolute;
+    left: 0; top: 0; 
+    width: 100%; height: inherit;
+    object-fit: cover;
+}
+
+.main__btn {
+    display: inline-block;
+    width: 130px; height: 130px;
+    border-radius: 50%;
+    border: 1px solid #2A2323;
+    font-family: 'GongGothicMedium';
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 130px;
+    transition: 0.3s;
+}
+
+.main__btn:hover {
+    background-color: #2A2323;
+    color: #fff;
+}
+
+/* About Section */
+.section_about {
+    background: url(../img/illust1.png) no-repeat right bottom #FEFAEA;
+    background-size: contain;
+}
+
+.about__cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about__cards li {
+    width: 30%; height: 330px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.about__cards li:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+}
+
+.about__cards li img {
+    width: 50px; height: 50px;
+}
+
+.about__cards li h3 {
+    margin: 10px 0;
+    font-family: 'GongGothicMedium';
+    color: #FDB915;
+}
+
+.about__cards li p {
+    text-align: left; 
+    line-height: 2em;
+}
+
+/* Flavor Section */
+.section_flavor {
+    background: url(../img/illust2.png) no-repeat right bottom #DDEFF6;
+    background-size: contain;
+}
+
+.flavor__slider {
+    display: flex;
+}
+
+.flavor__card {
+    position: relative;
+    width: 22%; height: 220px;
+    padding: 60px 20px 20px 20px;
+    margin-top: 70px;
+    border-radius: 80px 80px 5px 5px;
+    background-color: #fff;
+}
+
+.flavor__card img {
+    position: absolute;
+    top: -100px;
+    width: 100%;
+    transform: translateX(-20px);
+}
+
+.flavor__card h3 {
+    margin: 10px 0;
+    font-family: 'GongGothicMedium';
+    text-align: center;
+    color: #5470B1;
+}
+
+.flavor__card p {
+    line-height: 2em;
+}
+
+.flavor__slider .slick-slide {
+    margin: 0 7px;
+}
+
+.flavor__slider .slick-list {
+    margin: 0 -7px;
+}
+
+/* Promotion Section */
+.section_promotion {
+    background: url(../img/illust3.png) no-repeat right bottom #FEFAEA;
+    background-size: contain;
+}
+
+.section_promotion .title a {
+    color: #5470B1;
+}
+
+.promotion__slider {
+    display: flex;
+}
+
+.promotion__img {
+    width: 33.33333%;
+    padding: 50px 0;
+}
+.promotion__img img {
+    width: 100%;
+}
+
+.promotion__slider .slick-slide {
+    margin: 0 20px;
+    opacity: 0;
+    transition: all ease-in-out 0.3s;
+}
+
+.promotion__slider .slick-list {
+    margin: 0 -10px; 
+}
+
+.promotion__slider .slick-active {
+    opacity: 0.5;
+}
+
+.promotion__slider .slick-current {
+    transform: scale(1.3);
+    opacity: 1;
+}
+
+/* QnA Section */
+.section_qna {
+    background: url(../img/illust4.png) no-repeat right bottom #DDEFF6;
+    background-size: contain;
+}
+
+.qna__acc-box {
+    width: 600px;
+}
+
+.qna__acc-list {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    background-color: #fff;
+}
+
+.qna__acc-list h2 {
+    overflow: hidden;
+    font-family: 'GongGothicMedium';
+    font-size: 1.5em;
+    font-weight: normal;
+    color: #5470B1;
+    cursor: pointer;
+}
+
+.qna__acc-list h2::after {
+    content: '\e943';
+    float: right;
+    font-family : xeicon;
+}
+
+.qna__acc-list h2.active::after {
+    transform: rotate(180deg);
+}
+
+.qna__acc-text {
+    display: none;
+    padding-top: 10px;
+    margin-top: 10px;
+    border-top: 1px solid #2A2323;
+    line-height: 1.5em;
+}
+
+/* Footer */
+.footer__wrap {
+    display: flex;
+    column-gap: 3%;
+    height: 60vh;
+    padding: 90px 10%;
+    background-color: #478157;
+    color: #fff;
+}
+
+.footer__section {
+    flex: 1;
+}
+
+.footer__title {
+    font-family: 'GongGothicMedium';
+    font-size: 1.5em;
+    line-height: 2em;
+}
+
+.footer__content {
+    line-height: 2em;
+}
+
+.footer__social a {
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.footer__content a:hover,
+.footer__social a:hover {
+    opacity: 0.7;
+}
+
